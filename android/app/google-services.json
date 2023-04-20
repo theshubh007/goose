@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "45395501000",
+    "project_id": "goose-492ba",
+    "storage_bucket": "goose-492ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:45395501000:android:69429a7ebce139d8a0eafd",
+        "android_client_info": {
+          "package_name": "com.example.goose"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "45395501000-d8b3ma54vebijli9r9igaj75rl25ll00.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.goose",
+            "certificate_hash": "54304b9bee9f7e38dccfe8b76769596533a43059"
+          }
+        },
+        {
+          "client_id": "45395501000-5c9plbq80vmgtajgpov1nhtemdcav714.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfqBAoTBMAf75knw9Li8UjjGfgdVOMpWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "45395501000-5c9plbq80vmgtajgpov1nhtemdcav714.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
