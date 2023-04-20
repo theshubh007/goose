@@ -19,7 +19,7 @@ This is Amazing MarketPlace based Application,Where user can upload the details 
 <h2>Video Demo</h2>
 
 
-[![Video Demo](http://img.youtube.com/vi/u_R3qKiEb-g/0.jpg)](https://www.youtube.com/watch?v=u_R3qKiEb-g "Video Demo")
+[![Video Demo](http://img.youtube.com/vi/u_R3qKiEb-g/0.jpg)](https://www.youtube.com/watch?v=OQVxeXXB_nU "Video Demo")
 
 
 
