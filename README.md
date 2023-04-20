@@ -3,7 +3,7 @@
 
 ## Getting Started
 
-This is Amzing MarketPlace based Application,Where user can upload the details of the different items for selling.
+This is Amazing MarketPlace based Application,Where user can upload the details of the different items for selling.
 
 
 <h1>ScreenShots</h1>
@@ -18,5 +18,5 @@ This is Amzing MarketPlace based Application,Where user can upload the details o
 </p>
 <h2>Video Demo</h2>
 <p>
- [![Video Demo](http://img.youtube.com/vi/u_R3qKiEb-g/0.jpg)](http://www.youtube.com/watch?v=u_R3qKiEb-g "Video Demo")
+ [![Video Demo](http://img.youtube.com/vi/u_R3qKiEb-g/0.jpg)](https://youtube.com/shorts/u_R3qKiEb-g?feature=share "Video Demo")
 </p>
