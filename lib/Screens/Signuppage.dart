@@ -32,62 +32,12 @@ class _SignuppageState extends State<Signuppage> {
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    children: [
-                      IconButton(
-                          onPressed: () {
-                            Get.back();
-                          },
-                          icon: const Icon(
-                            Icons.arrow_back,
-                            color: Colors.white,
-                          )),
-                      const SizedBox(width: 20),
-                      Container(
-                        width: 200,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.grey,
-                            width: 1.0,
-                          ),
-                          borderRadius: BorderRadius.circular(
-                              20.0), // Set the border radius
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20.0),
-                          child: LinearProgressBar(
-                            maxSteps: 6,
-                            currentStep: 2,
-                            progressColor: Colorconstant.tomatored,
-                            backgroundColor: Colors.grey,
-                            valueColor: AlwaysStoppedAnimation<Color>(
-                                Colorconstant.tomatored),
-                            semanticsLabel: "Label",
-                            semanticsValue: "Value",
-                            minHeight: 10,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  TopbarWidget(),
                   const SizedBox(height: 20),
-                  Row(
-                    children: [
-                      const Text("Create an account",
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold)),
-                      const SizedBox(width: 8),
-                      Image.asset(
-                        "assets/padlock.png",
-                        height: 30,
-                        width: 30,
-                      ),
-                    ],
-                  ),
+                  CreateAccountHeader(),
                   const SizedBox(height: 20),
+
+                  //SignUp Form
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Form(
@@ -291,7 +241,6 @@ class _SignuppageState extends State<Signuppage> {
         width: double.infinity,
         decoration: BoxDecoration(
           color: Colorconstant.highgrey,
-          // borderRadius: BorderRadius.circular(20),
         ),
         child: Center(
           child: Padding(
@@ -321,7 +270,7 @@ class _SignuppageState extends State<Signuppage> {
           ),
         ),
       ),
-      // bottomNavigationBar:
+     
     );
   }
 
@@ -373,5 +322,79 @@ class _SignuppageState extends State<Signuppage> {
         backgroundColor: Colors.red,
       );
     }
+  }
+}
+
+class CreateAccountHeader extends StatelessWidget {
+  const CreateAccountHeader({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        const Text("Create an account",
+            textAlign: TextAlign.left,
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 25,
+                fontWeight: FontWeight.bold)),
+        const SizedBox(width: 8),
+        Image.asset(
+          "assets/padlock.png",
+          height: 30,
+          width: 30,
+        ),
+      ],
+    );
+  }
+}
+
+class TopbarWidget extends StatelessWidget {
+  const TopbarWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        IconButton(
+            onPressed: () {
+              Get.back();
+            },
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.white,
+            )),
+        const SizedBox(width: 20),
+        Container(
+          width: 200,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.grey,
+              width: 1.0,
+            ),
+            borderRadius: BorderRadius.circular(
+                20.0), // Set the border radius
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20.0),
+            child: LinearProgressBar(
+              maxSteps: 6,
+              currentStep: 2,
+              progressColor: Colorconstant.tomatored,
+              backgroundColor: Colors.grey,
+              valueColor: AlwaysStoppedAnimation<Color>(
+                  Colorconstant.tomatored),
+              semanticsLabel: "Label",
+              semanticsValue: "Value",
+              minHeight: 10,
+            ),
+          ),
+        ),
+      ],
+    );
   }
 }

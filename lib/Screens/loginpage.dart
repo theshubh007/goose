@@ -27,6 +27,8 @@ class _LoginpageState extends State<Loginpage> {
                     fontSize: 30,
                     fontWeight: FontWeight.bold)),
             const SizedBox(height: 20),
+
+            //continue with google button
             Container(
               width: 300,
               height: 40,
@@ -44,6 +46,9 @@ class _LoginpageState extends State<Loginpage> {
               ),
             ),
             const SizedBox(height: 20),
+
+
+            //continue with facebook button
             Container(
               width: 300,
               height: 40,
@@ -83,6 +88,10 @@ class _LoginpageState extends State<Loginpage> {
               ],
             ),
             const SizedBox(height: 20),
+
+
+
+            //signup with email button
             Container(
               width: 300,
               height: 40,
@@ -105,6 +114,7 @@ class _LoginpageState extends State<Loginpage> {
                 const SizedBox(width: 10),
                 InkWell(
                   onTap: () {
+                    //navigate to signup page
                     Get.toNamed("signuppage");
                   },
                   child: SizedBox(

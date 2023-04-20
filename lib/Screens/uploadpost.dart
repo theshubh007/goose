@@ -38,6 +38,7 @@ class _UploadpostState extends State<Uploadpost> {
 
   List<File> _imageFiles = [];
 
+//pickup images from gallery
   Future<void> _pickImages() async {
     try {
       List<Asset> images = await MultipleImagesPicker.pickImages(
@@ -70,6 +71,7 @@ class _UploadpostState extends State<Uploadpost> {
     }
   }
 
+//uploading the images to firebase storage
   Future<List<String>> uploadFiles(List<File> files) async {
     List<Future<String>> futures = [];
     for (File file in files) {
@@ -87,6 +89,7 @@ class _UploadpostState extends State<Uploadpost> {
     return urls;
   }
 
+//uploading the post data to firebase firestore
   Future<void> uploadPostData(BuildContext context) async {
     if (formkey.currentState!.validate()) {
       showDialog(
@@ -116,8 +119,9 @@ class _UploadpostState extends State<Uploadpost> {
             snackPosition: SnackPosition.BOTTOM,
             backgroundColor: Colors.green,
             colorText: Colors.white,
-            duration: const Duration(seconds: 3));
+            duration: const Duration(seconds: 1));
         cleareverything();
+        Get.offAllNamed("/navigatorpage");
       } catch (e) {
         Navigator.pop(context);
         Get.snackbar("Error", "Something went wrong,try again later",
@@ -143,6 +147,12 @@ class _UploadpostState extends State<Uploadpost> {
   void initState() {
     // TODO: implement initState
     super.initState();
+  }
+
+  @override
+  dispose() {
+    cleareverything();
+    super.dispose();
   }
 
   @override
@@ -307,9 +317,11 @@ class _UploadpostState extends State<Uploadpost> {
                         ],
                       ),
                       const SizedBox(height: 15),
+
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          //selected photos view area
                           const Text("Photos",
                               style: TextStyle(color: Colors.white)),
                           const SizedBox(height: 10),
@@ -360,8 +372,9 @@ class _UploadpostState extends State<Uploadpost> {
                                     ),
                                   ),
                                 ),
-
                           const SizedBox(height: 10),
+
+                          //add photo button
                           InkWell(
                             onTap: () async {
                               await _pickImages();
@@ -390,12 +403,13 @@ class _UploadpostState extends State<Uploadpost> {
                         ],
                       ),
                       const SizedBox(height: 15),
+
+                      //Submit and Discard button
                       Container(
                         height: 80,
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color: Colorconstant.highgrey,
-                          // borderRadius: BorderRadius.circular(20),
                         ),
                         child: Row(
                           children: [

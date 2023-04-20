@@ -43,14 +43,13 @@ class _HomepageState extends State<Homepage> {
               .collection("Posts")
               .snapshots(),
           builder: (context, snapshot) {
-            // print(snapshot.data!.docs.length);
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const Center(child: CircularProgressIndicator());
             } else if (snapshot.hasError) {
               return const Center(child: Text("Error"));
-            } else if (snapshot.data == null || snapshot.data!.docs.isEmpty) {
+            } else if (snapshot.data!.docs.isEmpty) {
               return Center(
-                  child: Text("No data Available \nFirstly upload a post...",
+                  child: Text("No data Available",
                       style: TextStyle(
                           color: Colorconstant.tomatored, fontSize: 20)));
             } else {
@@ -58,15 +57,14 @@ class _HomepageState extends State<Homepage> {
                   itemCount: snapshot.data!.docs.length,
                   itemBuilder: (BuildContext context, int index) {
                     String imgurl = snapshot.data!.docs[index]["urlList"][0];
-                    Padding(
+                    return Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: ListTile(
                         tileColor: Colorconstant.highgrey,
                         leading: Image.network(
                           imgurl,
-                          height: 100,
-                          width: 100,
-                          fit: BoxFit.cover,
+                          height: 120,
+                          width: 120,
                         ),
                         title: Text(snapshot.data!.docs[index]["title"],
                             style: TextStyle(color: Colorconstant.tomatored)),
@@ -75,7 +73,6 @@ class _HomepageState extends State<Homepage> {
                             style: const TextStyle(color: Colors.white)),
                       ),
                     );
-                    return null;
                   });
             }
           },

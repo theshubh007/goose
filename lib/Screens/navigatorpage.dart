@@ -1,7 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:goose/Screens/homepage.dart';
+import 'package:goose/Screens/itempage.dart';
 import 'package:goose/Screens/profilepage.dart';
+import 'package:goose/Screens/servicespage.dart';
 import 'package:goose/Utils/Colorconstant.dart';
 
 class Navigatorpage extends StatefulWidget {
@@ -14,8 +18,8 @@ class Navigatorpage extends StatefulWidget {
 class _NavigatorpageState extends State<Navigatorpage> {
   List pages = [
     const Homepage(),
-    const Profilepage(),
-    const Profilepage(),
+    const Itempage(),
+    const Servicespage(),
     const Profilepage(),
   ];
   int currindex = 0;
